@@ -26,13 +26,13 @@ export default function SearchBar({ onSearch, className = '' }) {
           value={query}
           onChange={e => setQuery(e.target.value)}
           placeholder={t('hero.searchPlaceholder')}
-          className="w-full pl-12 pr-32 py-4 rounded-2xl border border-gray-200 bg-white shadow-lg shadow-gray-200/50
+          className="w-full pl-12 pr-24 sm:pr-32 py-3 sm:py-4 rounded-2xl border border-gray-200 bg-white shadow-lg shadow-gray-200/50
                      focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent
-                     text-gray-800 placeholder:text-gray-400 transition-all duration-200"
+                     text-sm sm:text-base text-gray-800 placeholder:text-gray-400 transition-all duration-200"
         />
         <button
           type="submit"
-          className="absolute right-2 btn-primary !py-2.5 !px-5 !rounded-xl text-sm"
+          className="absolute right-2 btn-primary !py-2 sm:!py-2.5 !px-3 sm:!px-5 !rounded-xl text-xs sm:text-sm"
         >
           Search
         </button>

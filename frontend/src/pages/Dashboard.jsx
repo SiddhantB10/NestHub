@@ -129,12 +129,12 @@ export default function Dashboard() {
         )}
 
         {/* Tabs */}
-        <div className="flex gap-1 mb-6 bg-gray-100 rounded-xl p-1 w-fit">
+        <div className="flex gap-1 mb-6 bg-gray-100 rounded-xl p-1 w-full sm:w-fit overflow-x-auto">
           {tabs.map(tab => (
             <button
               key={tab.key}
               onClick={() => setActiveTab(tab.key)}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${
+              className={`flex items-center gap-2 px-3 sm:px-4 py-2.5 rounded-lg text-sm font-medium transition-all whitespace-nowrap ${
                 activeTab === tab.key
                   ? 'bg-white text-gray-900 shadow-sm'
                   : 'text-gray-500 hover:text-gray-700'
@@ -246,8 +246,8 @@ export default function Dashboard() {
               </div>
               <div className="space-y-3">
                 {requests.map(req => (
-                  <div key={req.id} className="bg-white rounded-xl border border-gray-100 p-4 shadow-sm flex items-center gap-4">
-                    <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+                  <div key={req.id} className="bg-white rounded-xl border border-gray-100 p-4 shadow-sm flex items-center gap-3 sm:gap-4">
+                    <div className={`w-10 h-10 rounded-lg flex-shrink-0 flex items-center justify-center ${
                       req.status === 'resolved' ? 'bg-emerald-100' : req.status === 'in-progress' ? 'bg-blue-100' : 'bg-amber-100'
                     }`}>
                       {req.status === 'resolved' ? <CheckCircle className="w-5 h-5 text-emerald-600" /> :
@@ -255,12 +255,12 @@ export default function Dashboard() {
                        <AlertCircle className="w-5 h-5 text-amber-600" />}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="font-medium text-gray-800 text-sm">{req.title}</p>
+                      <p className="font-medium text-gray-800 text-sm truncate">{req.title}</p>
                       <p className="text-xs text-gray-500">
                         {req.category} · Reported {req.createdAt}
                       </p>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-col sm:flex-row items-end sm:items-center gap-1 sm:gap-2 flex-shrink-0">
                       <span className={`px-2.5 py-1 rounded-lg text-xs font-medium capitalize ${statusColors[req.status]}`}>
                         {req.status}
                       </span>
@@ -333,7 +333,29 @@ export default function Dashboard() {
           {activeTab === 'payments' && (
             <motion.div key="payments" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}>
               <h2 className="text-lg font-bold text-gray-900 mb-4">{t('dashboard.payments')}</h2>
-              <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+              {/* Mobile: Card view */}
+              <div className="md:hidden space-y-3">
+                {demoPayments.map(payment => (
+                  <div key={payment.id} className="bg-white rounded-xl border border-gray-100 p-4 shadow-sm">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="font-medium text-gray-800 text-sm">{payment.month}</span>
+                      <span className="px-2.5 py-1 rounded-lg text-xs font-medium bg-emerald-100 text-emerald-700 capitalize">{payment.status}</span>
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-gray-500">₹{payment.amount.toLocaleString('en-IN')}</span>
+                      <span className="text-gray-400 text-xs">{new Date(payment.paidOn).toLocaleDateString('en-IN')}</span>
+                    </div>
+                    <button
+                      onClick={() => handleDownloadReceipt(payment.receiptId)}
+                      className="mt-2 flex items-center gap-1 text-sm text-brand-600 hover:text-brand-700 font-medium"
+                    >
+                      <Download className="w-4 h-4" /> {t('dashboard.downloadReceipt')}
+                    </button>
+                  </div>
+                ))}
+              </div>
+              {/* Desktop: Table view */}
+              <div className="hidden md:block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
                 <div className="overflow-x-auto">
                   <table className="w-full">
                     <thead>

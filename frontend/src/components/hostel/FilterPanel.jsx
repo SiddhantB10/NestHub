@@ -197,7 +197,7 @@ export default function FilterPanel({ filters, onChange, onClear }) {
                 animate={{ x: 0 }}
                 exit={{ x: '-100%' }}
                 transition={{ type: 'spring', damping: 25 }}
-                className="absolute left-0 top-0 bottom-0 w-80 bg-white p-5 overflow-y-auto"
+                className="absolute left-0 top-0 bottom-0 w-[85vw] max-w-80 bg-white p-5 overflow-y-auto"
                 onClick={e => e.stopPropagation()}
               >
                 <div className="flex items-center justify-between mb-5">

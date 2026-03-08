@@ -179,7 +179,7 @@ export default function Booking() {
                   {hostel.roomTypes.map((room) => (
                     <label
                       key={room.type}
-                      className={`flex items-center justify-between p-4 rounded-xl border-2 cursor-pointer transition-all ${
+                      className={`flex flex-wrap sm:flex-nowrap items-center justify-between gap-3 p-4 rounded-xl border-2 cursor-pointer transition-all ${
                         selectedRoom === room.type
                           ? 'border-brand-500 bg-brand-50'
                           : 'border-gray-100 hover:border-gray-200 bg-gray-50'

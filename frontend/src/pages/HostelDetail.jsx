@@ -81,21 +81,23 @@ export default function HostelDetail() {
                 </h2>
                 <div className="space-y-3">
                   {hostel.roomTypes.map((room, i) => (
-                    <div key={i} className="flex items-center justify-between p-4 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors">
-                      <div>
-                        <p className="font-semibold text-gray-800">{room.type}</p>
-                        <p className="text-sm text-gray-500">{room.available} {t('detail.available')} {t('detail.outOf')} {room.total} {t('detail.rooms')}</p>
+                    <div key={i} className="flex flex-wrap sm:flex-nowrap items-center justify-between gap-2 p-4 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors">
+                      <div className="flex items-center gap-2 min-w-0">
+                        <div className="flex-shrink-0">
+                          {room.available > 0 ? (
+                            <div className="w-3 h-3 rounded-full bg-emerald-400 animate-pulse-soft" title="Available" />
+                          ) : (
+                            <div className="w-3 h-3 rounded-full bg-red-400" title="Full" />
+                          )}
+                        </div>
+                        <div>
+                          <p className="font-semibold text-gray-800">{room.type}</p>
+                          <p className="text-sm text-gray-500">{room.available} {t('detail.available')} {t('detail.outOf')} {room.total} {t('detail.rooms')}</p>
+                        </div>
                       </div>
                       <div className="text-right">
-                        <p className="text-xl font-bold text-gray-900">₹{room.price.toLocaleString('en-IN')}</p>
+                        <p className="text-lg sm:text-xl font-bold text-gray-900">₹{room.price.toLocaleString('en-IN')}</p>
                         <p className="text-xs text-gray-500">{t('listing.perMonth')}</p>
-                      </div>
-                      <div className="ml-4">
-                        {room.available > 0 ? (
-                          <div className="w-3 h-3 rounded-full bg-emerald-400 animate-pulse-soft" title="Available" />
-                        ) : (
-                          <div className="w-3 h-3 rounded-full bg-red-400" title="Full" />
-                        )}
                       </div>
                     </div>
                   ))}
@@ -271,7 +273,7 @@ export default function HostelDetail() {
                   {t('detail.travelCost')}
                 </h2>
                 <p className="text-sm text-gray-500 mb-4">Estimated travel cost & time from this hostel to NMIMS campus ({travel.distance} km)</p>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   <div className="p-4 rounded-xl bg-blue-50 border border-blue-100 text-center">
                     <Car className="w-5 h-5 text-blue-600 mx-auto mb-2" />
                     <p className="font-bold text-gray-800">₹{travel.auto.fare}</p>
