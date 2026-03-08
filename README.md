@@ -1,4 +1,4 @@
-# StayNMIMS — Student Hostel Accommodation Platform
+# NestHub — Student Hostel Accommodation Platform
 
 A modern, full-stack web application to help NMIMS students in Mumbai discover, compare, and book hostel accommodations. Built with React, Tailwind CSS, Framer Motion, Node.js, Express, and MongoDB.
 
@@ -93,7 +93,7 @@ This populates MongoDB with 12 hostels and an admin user.
 | Role    | Email                     | Password    |
 |---------|---------------------------|-------------|
 | Student | arjun.mehta@nmims.edu     | (any text)  |
-| Admin   | admin@staynmims.com       | (any text)  |
+| Admin   | admin@nesthub.com         | (any text)  |
 | Parent  | Use "For Parents" page    | Code: STAY2025 |
 
 ---

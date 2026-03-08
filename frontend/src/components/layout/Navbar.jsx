@@ -34,7 +34,7 @@ export default function Navbar() {
               <Home className="w-5 h-5 text-white" />
             </div>
             <span className="text-xl font-bold text-gray-900">
-              Stay<span className="text-brand-600">NMIMS</span>
+              Nest<span className="text-brand-600">Hub</span>
             </span>
           </Link>
 

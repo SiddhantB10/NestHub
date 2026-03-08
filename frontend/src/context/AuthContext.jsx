@@ -16,7 +16,7 @@ const demoUser = {
 const demoAdmin = {
   id: 'demo-admin-1',
   name: 'Admin',
-  email: 'admin@staynmims.com',
+  email: 'admin@nesthub.com',
   role: 'admin',
 };
 
@@ -25,7 +25,7 @@ export function AuthProvider({ children }) {
   const [token, setToken] = useState(null);
 
   const login = useCallback((email, password) => {
-    if (email === 'admin@staynmims.com') {
+    if (email === 'admin@nesthub.com') {
       setUser(demoAdmin);
       setToken('demo-admin-token');
       return { success: true, user: demoAdmin };

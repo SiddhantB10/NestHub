@@ -15,7 +15,7 @@ export default function Footer() {
                 <Home className="w-5 h-5 text-white" />
               </div>
               <span className="text-xl font-bold text-white">
-                Stay<span className="text-brand-400">NMIMS</span>
+                Nest<span className="text-brand-400">Hub</span>
               </span>
             </Link>
             <p className="text-sm leading-relaxed text-gray-400">
@@ -59,7 +59,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center gap-2.5 text-sm text-gray-400">
                 <Mail className="w-4 h-4 text-brand-400 flex-shrink-0" />
-                support@staynmims.com
+                support@nesthub.com
               </li>
               <li className="flex items-center gap-2.5 text-sm text-gray-400">
                 <Phone className="w-4 h-4 text-brand-400 flex-shrink-0" />
@@ -75,7 +75,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-xs text-gray-500">
-            © {new Date().getFullYear()} StayNMIMS. Built for students, by students.
+            © {new Date().getFullYear()} NestHub. Built for students, by students.
           </p>
           <p className="text-xs text-gray-600">
             Not officially affiliated with SVKM's NMIMS University.

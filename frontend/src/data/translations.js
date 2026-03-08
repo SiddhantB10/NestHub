@@ -24,7 +24,7 @@ export const translations = {
       citiesCovered: 'Areas Covered',
     },
     features: {
-      title: 'Why Students Trust StayNMIMS',
+      title: 'Why Students Trust NestHub',
       subtitle: 'We built this platform after struggling to find hostels ourselves. Every feature exists because a student needed it.',
       realtime: 'Real-Time Availability',
       realtimeDesc: 'No more calling 20 hostels to check rooms. See live availability updated by hostel owners.',
@@ -176,7 +176,7 @@ export const translations = {
       citiesCovered: 'क्षेत्र कवर किए',
     },
     features: {
-      title: 'छात्र StayNMIMS पर क्यों भरोसा करते हैं',
+      title: 'छात्र NestHub पर क्यों भरोसा करते हैं',
       subtitle: 'हमने यह प्लेटफॉर्म खुद हॉस्टल खोजने में दिक्कत होने के बाद बनाया। हर फीचर किसी छात्र की जरूरत से आया है।',
       realtime: 'रियल-टाइम उपलब्धता',
       realtimeDesc: 'अब 20 हॉस्टल को कॉल करने की जरूरत नहीं। लाइव उपलब्धता देखें।',

@@ -1,7 +1,7 @@
 {
-  "name": "staynmims-backend",
+  "name": "nesthub-backend",
   "version": "1.0.0",
-  "description": "StayNMIMS backend API server",
+  "description": "NestHub backend API server",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

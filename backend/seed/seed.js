@@ -8,7 +8,7 @@ dotenv.config();
 
 const seedDB = async () => {
   try {
-    const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/staynmims';
+    const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/nesthub';
     await mongoose.connect(uri);
     console.log('Connected to MongoDB for seeding');
 
@@ -16,11 +16,11 @@ const seedDB = async () => {
     await Hostel.insertMany(hostelData);
     console.log(`Seeded ${hostelData.length} hostels`);
 
-    const adminExists = await User.findOne({ email: 'admin@staynmims.com' });
+    const adminExists = await User.findOne({ email: 'admin@nesthub.com' });
     if (!adminExists) {
       await User.create({
         name: 'Admin',
-        email: 'admin@staynmims.com',
+        email: 'admin@nesthub.com',
         password: 'admin123456',
         role: 'admin',
         phone: '+91 98765 43210',

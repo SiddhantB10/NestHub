@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
   try {
-    const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/staynmims';
+    const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/nesthub';
     await mongoose.connect(uri);
     console.log('MongoDB connected successfully');
   } catch (error) {

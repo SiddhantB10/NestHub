@@ -61,7 +61,7 @@ export default function AdminPanel() {
             <h2 className="text-xl font-bold text-gray-900 mb-2">Admin Access Required</h2>
             <p className="text-gray-500 mb-6">Sign in with admin credentials to access the panel.</p>
             <button
-              onClick={() => login('admin@staynmims.com', 'admin')}
+              onClick={() => login('admin@nesthub.com', 'admin')}
               className="btn-primary"
             >
               Sign In as Admin
