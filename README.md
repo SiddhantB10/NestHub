@@ -42,7 +42,7 @@ A modern, full-stack web application to help NMIMS students in Mumbai discover, 
 
 ```bash
 # Clone the repo (or open the project folder)
-cd StayNMIMS
+cd NestHub
 
 # Install backend dependencies
 cd backend
@@ -101,7 +101,7 @@ This populates MongoDB with 12 hostels and an admin user.
 ## Project Structure
 
 ```
-StayNMIMS/
+NestHub/
 ├── backend/
 │   ├── config/          # Database connection
 │   ├── middleware/       # JWT auth middleware
